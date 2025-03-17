@@ -175,7 +175,8 @@ const mockPosts = [
     excerpt: 'Deep diving into the company\'s tech stack and development practices...',
     image: 'https://imgflip.com/s/meme/Buff-Doge-vs-Cheems.png',
     date: '2025-02-14',
-    tag: 'Technical'
+    tag: 'Week 2',
+    path: '/week2'
   },
   {
     id: 3,

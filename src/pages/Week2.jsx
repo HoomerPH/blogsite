@@ -396,7 +396,7 @@ const Week2 = () => {
                   src="/OJT/Week 2/image.png" 
                   alt="Environment Setup"
                 />
-                <Caption>Setting up the development environment</Caption>
+                <Caption>Meet the Team </Caption>
               </figure>
             </ImageContainer>
             
@@ -406,7 +406,7 @@ const Week2 = () => {
                   src="/OJT/Week 2/image copy.png" 
                   alt="Code Implementation"
                 />
-                <Caption>Initial code implementation</Caption>
+                <Caption> Planned Use Cases of BU Health Sync+ (Part 2) </Caption>
               </figure>
             </ImageContainer>
             
@@ -416,7 +416,7 @@ const Week2 = () => {
                   src="/OJT/Week 2/image copy 2.png" 
                   alt="Team Discussion"
                 />
-                <Caption>Team discussion on architecture design</Caption>
+                <Caption> Planned Use Cases of BU Health Sync+ (Part 1) </Caption>
               </figure>
             </ImageContainer>
           </ImageGrid>
