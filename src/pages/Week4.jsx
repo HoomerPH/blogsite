@@ -1,33 +1,33 @@
-import styled from 'styled-components'
-import { useState, useEffect } from 'react'
-import { FaHeart, FaLightbulb, FaArrowUp } from 'react-icons/fa'
-import { BiHappy, BiSad } from 'react-icons/bi'
-import { Link } from 'react-router-dom'; // Added Link import
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FaHeart, FaLightbulb, FaArrowUp } from 'react-icons/fa';
+import { BiHappy } from 'react-icons/bi';
 
-// Reuse the styled components from Week1
+// Reusing styled components from other Week pages - adjust if needed
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
   position: relative;
-`
+`;
 
 const Header = styled.header`
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing.xl};
-`
+`;
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.primary};
   ${({ theme }) => theme.typography.h1}
   margin-bottom: ${({ theme }) => theme.spacing.md};
-`
+`;
 
 const Date = styled.p`
   color: ${({ theme }) => theme.textSecondary};
   ${({ theme }) => theme.typography.small}
   font-style: italic;
-`
+`;
 
 const Section = styled.section`
   background: ${({ theme }) => `linear-gradient(145deg, ${theme.surface}80, ${theme.surface}40)`};
@@ -65,28 +65,13 @@ const Section = styled.section`
   }
 
   @keyframes rotate-corner {
-    0% {
-      top: -5px;
-      left: -5px;
-    }
-    25% {
-      top: -5px;
-      left: calc(100% - 5px);
-    }
-    50% {
-      top: calc(100% - 5px);
-      left: calc(100% - 5px);
-    }
-    75% {
-      top: calc(100% - 5px);
-      left: -5px;
-    }
-    100% {
-      top: -5px;
-      left: -5px;
-    }
+    0% { top: -5px; left: -5px; }
+    25% { top: -5px; left: calc(100% - 5px); }
+    50% { top: calc(100% - 5px); left: calc(100% - 5px); }
+    75% { top: calc(100% - 5px); left: -5px; }
+    100% { top: -5px; left: -5px; }
   }
-`
+`;
 
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.text};
@@ -94,38 +79,39 @@ const SectionTitle = styled.h2`
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   padding-bottom: ${({ theme }) => theme.spacing.xs};
   border-bottom: 2px solid ${({ theme }) => theme.primary};
-`
+`;
 
 const Content = styled.div`
   color: ${({ theme }) => theme.text};
   ${({ theme }) => theme.typography.body}
   line-height: 1.8;
+  font-size: 1rem;
   position: relative;
   z-index: 1;
   background: ${({ theme }) => `linear-gradient(145deg, ${theme.surface}95, ${theme.surface}90)`};
-`
+`;
 
 const Paragraph = styled.p`
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-size: 1rem;
   line-height: 1.8;
-`
+`;
 
 const Highlight = styled.span`
   color: ${({ theme }) => theme.primary};
   font-weight: 600;
-`
+`;
 
 const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: ${({ theme }) => theme.spacing.lg};
   margin: ${({ theme }) => theme.spacing.xl} 0;
-`
+`;
 
 const ImageContainer = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
-  overflow: visible;
+  overflow: hidden; // Changed from visible to hidden for cleaner image containment
   background: ${({ theme }) => `linear-gradient(145deg, ${theme.surface}90, ${theme.surface}60)`};
   backdrop-filter: blur(10px);
   border: 1px solid ${({ theme }) => `${theme.border}40`};
@@ -136,39 +122,18 @@ const ImageContainer = styled.div`
     transform: scale(1.02);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: ${({ theme }) => `radial-gradient(circle, ${theme.primary} 0%, ${theme.secondary} 100%)`};
-    filter: blur(2px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    animation: rotate-corner ${({ theme }) => theme.animation.cornerLight.duration} cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    box-shadow: ${({ theme }) => `${theme.animation.cornerLight.glow} ${theme.primary}40`};
-    z-index: 0;
-  }
-
-  &:hover::before {
-    opacity: 0.9;
-  }
-`
+`;
 
 const BlogImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
   transition: ${({ theme }) => theme.transition};
-  position: relative;
-  z-index: 1;
   
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.03); // Keep hover effect if desired, or remove if ImageContainer handles it
   }
-`
+`;
 
 const Caption = styled.figcaption`
   padding: ${({ theme }) => theme.spacing.sm};
@@ -176,7 +141,7 @@ const Caption = styled.figcaption`
   color: ${({ theme }) => theme.textSecondary};
   ${({ theme }) => theme.typography.small}
   background-color: ${({ theme }) => theme.surface};
-`
+`;
 
 const ProgressBar = styled.div`
   position: fixed;
@@ -187,7 +152,7 @@ const ProgressBar = styled.div`
   background: ${({ theme }) => theme.primary};
   z-index: 1000;
   transition: width 0.2s ease;
-`
+`;
 
 const ReactionBar = styled.div`
   display: flex;
@@ -199,9 +164,7 @@ const ReactionBar = styled.div`
   backdrop-filter: blur(10px);
   border-radius: ${({ theme }) => theme.borderRadius};
   border: 1px solid ${({ theme }) => `${theme.border}40`};
-  position: relative;
-  overflow: visible;
-`
+`;
 
 const ReactionButton = styled.button`
   display: flex;
@@ -221,31 +184,6 @@ const ReactionButton = styled.button`
 
   svg {
     font-size: 1.2rem;
-  }
-`
-
-// Added Navigation Button Styled Components
-const NavigationButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: ${({ theme }) => theme.spacing.xl};
-  padding: ${({ theme }) => theme.spacing.md} 0;
-`;
-
-const StyledNavButton = styled(Link)`
-  background-color: ${({ theme }) => theme.primary};
-  color: #ffffff;
-  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  text-decoration: none;
-  font-weight: 600;
-  transition: ${({ theme }) => theme.transition};
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
-  &:hover {
-    background-color: ${({ theme }) => theme.secondary};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
 `;
 
@@ -271,22 +209,7 @@ const ScrollToTop = styled.button`
   &:hover {
     transform: ${props => props.$visible ? 'scale(1.1)' : 'scale(0.8)'};
   }
-`
-
-const CodeBlock = styled.pre`
-  background: ${({ theme }) => `${theme.surface}90`};
-  padding: ${({ theme }) => theme.spacing.md};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  overflow-x: auto;
-  margin: ${({ theme }) => theme.spacing.md} 0;
-  border: 1px solid ${({ theme }) => `${theme.border}40`};
-  
-  code {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-`
+`;
 
 const List = styled.ul`
   list-style-position: inside;
@@ -304,197 +227,168 @@ const List = styled.ul`
       margin-right: ${({ theme }) => theme.spacing.sm};
     }
   }
-`
+`;
 
-const Week2 = () => {
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const [showScrollTop, setShowScrollTop] = useState(false)
+const NavigationButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.md} 0;
+`;
+
+const StyledNavButton = styled(Link)`
+  background-color: ${({ theme }) => theme.primary};
+  color: #ffffff;
+  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  text-decoration: none;
+  font-weight: 600;
+  transition: ${({ theme }) => theme.transition};
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  &:hover {
+    background-color: ${({ theme }) => theme.secondary};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+`;
+
+const Week4 = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [reactions, setReactions] = useState({
     helpful: 0,
     inspiring: 0,
     fun: 0
-  })
-  const [userReaction, setUserReaction] = useState(null)
+  });
+  const [userReaction, setUserReaction] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = (window.scrollY / totalHeight) * 100
-      setScrollProgress(progress)
-      setShowScrollTop(window.scrollY > 300)
-    }
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+      setShowScrollTop(window.scrollY > 300);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleReaction = (type) => {
     if (userReaction === type) {
-      setReactions(prev => ({...prev, [type]: prev[type] - 1}))
-      setUserReaction(null)
+      setReactions(prev => ({ ...prev, [type]: prev[type] - 1 }));
+      setUserReaction(null);
     } else {
       if (userReaction) {
-        setReactions(prev => ({...prev, [userReaction]: prev[userReaction] - 1}))
+        setReactions(prev => ({ ...prev, [userReaction]: prev[userReaction] - 1 }));
       }
-      setReactions(prev => ({...prev, [type]: prev[type] + 1}))
-      setUserReaction(type)
+      setReactions(prev => ({ ...prev, [type]: prev[type] + 1 }));
+      setUserReaction(type);
     }
-  }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-  }
+    });
+  };
 
   return (
     <PageContainer>
       <ProgressBar $width={scrollProgress} />
       <Header>
-        <Title>Week 2: Deep Diving into Development</Title>
-        <Date>February 10-14, 2025</Date>
+        <Title>Week 4: Database Design & First UI Implementation</Title>
+        <Date>February 24-28, 2025</Date>
       </Header>
-      
-      <Section>
-        <SectionTitle>Project Setup and Environment Configuration</SectionTitle>
-        <Content>
-          <Paragraph>
-            The second week of my OJT journey focused on setting up the development environment 
-            for the BU HealthSync+ project. After the initial orientation and project briefing 
-            from Week 1, we dove straight into the technical aspects of the project.
-          </Paragraph>
-          
-          <Paragraph>
-            Under the guidance of <Highlight>Sir Gerald</Highlight>, we began by setting up our 
-            local development environments with all the necessary tools and frameworks required 
-            for both the desktop and mobile applications.
-          </Paragraph>
-        </Content>
-      </Section>
 
       <Section>
-        <SectionTitle>Technical Stack Overview</SectionTitle>
+        <SectionTitle>Database Schema for BU HealthSync+</SectionTitle>
         <Content>
           <Paragraph>
-            This week, we focused on understanding and setting up the technical stack for both 
-            parts of the BU HealthSync+ project:
+            This week marked a significant step forward as we finalized the initial <Highlight>database schema</Highlight> for BU HealthSync+.
+            This involved identifying key entities, their attributes, and the relationships between them. We focused on creating a robust and scalable database structure that can support all planned features of the application.
           </Paragraph>
-          
+          <Paragraph>
+            Key tables designed include:
+          </Paragraph>
           <List>
-            <li>
-              <Highlight>Desktop Application (Laravel):</Highlight>
-              {" "}Setup of PHP 8.2, Composer, and Laravel 10
-            </li>
-            <li>
-              <Highlight>Mobile Application (React Native):</Highlight>
-              {" "}Configuration of Node.js, React Native CLI, and Android Studio
-            </li>
-            <li>
-              <Highlight>Database:</Highlight>
-              {" "}MySQL setup and initial schema design
-            </li>
-            <li>
-              <Highlight>Version Control:</Highlight>
-              {" "}Git repository setup and branching strategy
-            </li>
+            <li><Highlight>Users:</Highlight> Storing user credentials, roles (student, staff, admin, healthcare provider), and personal information.</li>
+            <li><Highlight>Profiles:</Highlight> Detailed health profiles, medical history, and emergency contact information.</li>
+            <li><Highlight>Appointments:</Highlight> Managing clinic appointments, schedules, and statuses.</li>
+            <li><Highlight>MedicalRecords:</Highlight> Securely storing consultation notes, prescriptions, and lab results.</li>
+            <li><Highlight>Notifications:</Highlight> Handling reminders for appointments and health advisories.</li>
           </List>
+          <Paragraph>
+            We used ERD (Entity Relationship Diagram) tools to visualize the schema and ensure data integrity through proper normalization and constraints.
+          </Paragraph>
+        </Content>
+      </Section>
 
-          <CodeBlock>
-            <code>
-              # Project Structure{"\n"}
-              bu-healthsync/{"\n"}
-              ├── desktop/           # Laravel application{"\n"}
-              ├── mobile/           # React Native application{"\n"}
-              └── docs/             # Project documentation
-            </code>
-          </CodeBlock>
+      <Section>
+        <SectionTitle>Mobile App: Landing Screen Development</SectionTitle>
+        <Content>
+          <Paragraph>
+            With the database structure taking shape, I shifted my focus to the <Highlight>mobile application development</Highlight>.
+            My first major task was to create the <Highlight>Landing Screen</Highlight> for the BU HealthSync+ app using React Native.
+            This screen will be the first point of interaction for users, so it needed to be welcoming, informative, and visually appealing.
+          </Paragraph>
+          <Paragraph>
+            The Landing Screen includes:
+          </Paragraph>
+          <List>
+            <li>App Logo and Name</li>
+            <li>A brief tagline or welcome message</li>
+            <li>Buttons for "Login" and "Register"</li>
+            <li>Potentially a carousel for featured health tips or announcements (planned for later iteration)</li>
+          </List>
+          <Paragraph>
+            I focused on creating a clean UI, ensuring responsiveness across different screen sizes, and setting up basic navigation to the login and registration screens.
+          </Paragraph>
         </Content>
       </Section>
       
       <Section>
-        <SectionTitle>Development Progress</SectionTitle>
+        <SectionTitle>Development Highlights & Challenges</SectionTitle>
         <Content>
           <ImageGrid>
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 2/image.png" 
-                  alt="Environment Setup"
+                  src="/OJT/Week 4/image.png" 
+                  alt="Database ERD Snippet"
                 />
-                <Caption>Meet the Team </Caption>
+                <Caption>Snippet of the BU HealthSync+ ERD</Caption>
               </figure>
             </ImageContainer>
-            
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 2/image copy.png" 
-                  alt="Code Implementation"
+                  src="/OJT/Week 4/image copy.png" 
+                  alt="Mobile App Landing Screen Mockup/Screenshot"
                 />
-                <Caption> Planned Use Cases of BU Health Sync+ (Part 2) </Caption>
-              </figure>
-            </ImageContainer>
-            
-            <ImageContainer>
-              <figure>
-                <BlogImage 
-                  src="/OJT/Week 2/image copy 2.png" 
-                  alt="Team Discussion"
-                />
-                <Caption> Planned Use Cases of BU Health Sync+ (Part 1) </Caption>
+                <Caption>Early version of the Mobile App Landing Screen</Caption>
               </figure>
             </ImageContainer>
           </ImageGrid>
-        </Content>
-      </Section>
-      
-      <Section>
-        <SectionTitle>Challenges and Learning Points</SectionTitle>
-        <Content>
           <Paragraph>
-            This week presented several challenges that provided valuable learning opportunities:
+            A key challenge this week was translating the conceptual database design into a concrete SQL schema, considering future scalability. For the mobile app, ensuring a consistent look and feel with the planned branding guidelines was a primary focus.
           </Paragraph>
-          
-          <List>
-            <li>
-              <Highlight>Cross-Platform Development:</Highlight>
-              {" "}Understanding the nuances of developing for both iOS and Android platforms
-            </li>
-            <li>
-              <Highlight>Environment Setup:</Highlight>
-              {" "}Resolving various configuration issues and dependencies
-            </li>
-            <li>
-              <Highlight>Version Control:</Highlight>
-              {" "}Learning Git workflow and best practices for team collaboration
-            </li>
-            <li>
-              <Highlight>API Integration:</Highlight>
-              {" "}Planning the integration between mobile and desktop applications
-            </li>
-          </List>
         </Content>
       </Section>
 
       <Section>
         <SectionTitle>Key Takeaways</SectionTitle>
         <Content>
-          <Paragraph>
-            Week 2 has been instrumental in building a solid foundation for the project:
-          </Paragraph>
-          
           <List>
-            <li>Gained practical experience with professional development tools and workflows</li>
-            <li>Learned the importance of proper environment setup and configuration</li>
-            <li>Understood the significance of documentation in team projects</li>
-            <li>Improved problem-solving skills through troubleshooting setup issues</li>
+            <li>Gained hands-on experience in database design and ERD creation.</li>
+            <li>Successfully implemented the first UI screen for the mobile application using React Native.</li>
+            <li>Learned about the importance of clear requirements for both backend and frontend development.</li>
+            <li>Improved skills in using styled-components for UI development in React Native.</li>
           </List>
-          
           <Paragraph>
-            Looking ahead to Week 3, I'm excited to start implementing the core features of 
-            the mobile application and working more closely with the team on integrated 
-            components.
+            Week 4 was about laying critical foundations. I'm excited to build upon the database and UI work in the coming weeks, focusing on user authentication and core app functionalities.
           </Paragraph>
         </Content>
       </Section>
@@ -524,8 +418,8 @@ const Week2 = () => {
       </ReactionBar>
 
       <NavigationButtonsContainer>
-        <StyledNavButton to="/week1">← Go Back to Week 1</StyledNavButton>
-        <StyledNavButton to="/week3">Proceed to Week 3 →</StyledNavButton>
+        <StyledNavButton to="/week3">← Go Back to Week 3</StyledNavButton>
+        <div>{/* Placeholder for "Proceed to Week 5" button */}</div>
       </NavigationButtonsContainer>
 
       <ScrollToTop 
@@ -536,7 +430,7 @@ const Week2 = () => {
         <FaArrowUp />
       </ScrollToTop>
     </PageContainer>
-  )
-}
+  );
+};
 
-export default Week2
+export default Week4;

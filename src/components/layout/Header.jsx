@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa'
-import { useTheme } from '../../context/ThemeContext'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import { useState } from 'react'
 
 const HeaderContainer = styled.header`
@@ -27,12 +26,12 @@ const HeaderContent = styled.div`
 const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.primary};
+  color: #DDA853;
   text-decoration: none;
   transition: ${({ theme }) => theme.transition};
 
   &:hover {
-    color: ${({ theme }) => theme.secondary};
+    color: #27548A;
   }
 `
 
@@ -75,24 +74,6 @@ const NavLink = styled(Link)`
   }
 `
 
-const ThemeToggle = styled.button`
-  background: none;
-  border: none;
-  color: ${({ theme }) => theme.text};
-  cursor: pointer;
-  padding: ${({ theme }) => theme.spacing.xs};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: ${({ theme }) => theme.transition};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.primary};
-  }
-`
-
 const MobileMenuButton = styled.button`
   display: none;
   background: none;
@@ -108,7 +89,6 @@ const MobileMenuButton = styled.button`
 `
 
 const Header = () => {
-  const { isDarkMode, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -127,9 +107,6 @@ const Header = () => {
           <NavLink to="/skills" onClick={closeMenu}>Skills</NavLink>
           <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
           <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
-          <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
-            {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </ThemeToggle>
         </Nav>
       </HeaderContent>
     </HeaderContainer>

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { FaHeart, FaLightbulb, FaArrowUp } from 'react-icons/fa'
 import { BiHappy, BiSad } from 'react-icons/bi'
+import { Link } from 'react-router-dom' // Added Link import
 
 const PageContainer = styled.div`
   display: flex;
@@ -316,6 +317,30 @@ const ScrollToTop = styled.button`
   }
 `
 
+const NavigationButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.md} 0;
+`;
+
+const StyledNavButton = styled(Link)`
+  background-color: ${({ theme }) => theme.primary};
+  color: #ffffff; // Ensuring text is white for better contrast on primary background
+  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  text-decoration: none;
+  font-weight: 600;
+  transition: ${({ theme }) => theme.transition};
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  &:hover {
+    background-color: ${({ theme }) => theme.secondary};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+`;
+
 const Week1 = () => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -516,6 +541,11 @@ const Week1 = () => {
           Fun {reactions.fun > 0 && reactions.fun}
         </ReactionButton>
       </ReactionBar>
+
+      <NavigationButtonsContainer>
+        <div>{/* Empty div for spacing, as there's no "Previous" button */}</div>
+        <StyledNavButton to="/week2">Proceed to Week 2 →</StyledNavButton>
+      </NavigationButtonsContainer>
 
       <ScrollToTop 
         onClick={scrollToTop} 

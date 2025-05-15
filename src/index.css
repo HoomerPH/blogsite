@@ -17,11 +17,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #27548A;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #DDA853;
 }
 
 body {
@@ -29,6 +29,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #F5EEDC 60%, #DDA853 100%);
+  color: #183B4E;
 }
 
 h1 {
@@ -44,10 +46,14 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+  background: #27548A;
+  color: #F5EEDC;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #DDA853;
+  background: #DDA853;
+  color: #183B4E;
 }
 button:focus,
 button:focus-visible {
@@ -63,15 +69,17 @@ p {
   margin: 0;
 }
 
+/* Remove or override the light color scheme block */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #183B4E;
+    background-color: #F5EEDC;
   }
   a:hover {
-    color: #747bff;
+    color: #DDA853;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #27548A;
+    color: #F5EEDC;
   }
 }

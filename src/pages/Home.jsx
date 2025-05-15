@@ -5,60 +5,62 @@ import { Link } from 'react-router-dom'
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.xl};
+  gap: 3rem;
+  background: ${({ theme }) => theme.background};
+  min-height: 100vh;
 `
 
 const Hero = styled.section`
   text-align: center;
-  padding: ${({ theme }) => `${theme.spacing.xl} 0`};
+  padding: 3rem 0;
   max-width: 800px;
   margin: 0 auto;
 `
 
 const Title = styled.h1`
-  color: ${({ theme }) => theme.primary};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  ${({ theme }) => theme.typography.h1}
+  color: #DDA853;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 `
 
 const Subtitle = styled.p`
-  color: ${({ theme }) => theme.textSecondary};
-  font-size: 1.125rem; // 18px
+  color: #183B4E;
+  font-size: 1.125rem;
   line-height: 1.6;
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-  ${({ theme }) => theme.typography.body}
+  margin-bottom: 2rem;
 `
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.text};
+  color: #183B4E;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: 1.5rem;
 `
 
 const HighlightText = styled.span`
-  color: ${({ theme }) => theme.primary};
+  color: #DDA853;
   font-weight: 600;
 `
 
 const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: ${({ theme }) => theme.spacing.lg};
+  gap: 2rem;
 `
 
 const BlogCard = styled.article`
-  background: ${({ theme }) => `linear-gradient(145deg, ${theme.surface}80, ${theme.surface}40)`};
-  backdrop-filter: blur(10px);
-  border-radius: ${({ theme }) => theme.borderRadius};
-  overflow: visible;  // Changed from hidden to allow the light effect
-  transition: ${({ theme }) => theme.transition};
-  border: 1px solid ${({ theme }) => `${theme.border}40`};
+  background: linear-gradient(145deg, #fffbe9cc, #F5EEDC99);
+  border-radius: 1em;
+  overflow: visible;
+  transition: box-shadow 0.3s, transform 0.3s;
+  border: none; /* Remove the border */
   position: relative;
+  box-shadow: 0 4px 15px rgba(39, 84, 138, 0.07);
 
   &:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(39, 84, 138, 0.12);
   }
 
   &::before {
@@ -67,12 +69,12 @@ const BlogCard = styled.article`
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: ${({ theme }) => `radial-gradient(circle, ${theme.primary} 0%, ${theme.secondary} 100%)`};
+    background: radial-gradient(circle, #27548A 0%, #183B4E 100%);
     filter: blur(2px);
     opacity: 0;
     transition: opacity 0.3s ease;
-    animation: rotate-corner ${({ theme }) => theme.animation.cornerLight.duration} cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    box-shadow: ${({ theme }) => `${theme.animation.cornerLight.glow} ${theme.primary}40`};
+    animation: rotate-corner 2.5s linear infinite;
+    box-shadow: 0 0 8px #DDA85366;
     z-index: 0;
   }
 
@@ -82,27 +84,22 @@ const BlogCard = styled.article`
 
   @keyframes rotate-corner {
     0% {
-      transform: translate(0, 0);
       top: 0;
       left: 0;
     }
     25% {
-      transform: translate(0, 0);
       top: 0;
       left: calc(100% - 6px);
     }
     50% {
-      transform: translate(0, 0);
       top: calc(100% - 6px);
       left: calc(100% - 6px);
     }
     75% {
-      transform: translate(0, 0);
       top: calc(100% - 6px);
       left: 0;
     }
     100% {
-      transform: translate(0, 0);
       top: 0;
       left: 0;
     }
@@ -121,26 +118,30 @@ const BlogImage = styled.img`
   object-fit: cover;
   position: relative;
   z-index: 1;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
 `
 
 const BlogContent = styled.div`
-  padding: ${({ theme }) => theme.spacing.lg};
+  padding: 2rem;
   position: relative;
   z-index: 1;
-  background: ${({ theme }) => `linear-gradient(145deg, ${theme.surface}95, ${theme.surface}90)`};
+  background: linear-gradient(145deg, #fffbe9f2, #F5EEDCeb);
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 `
 
 const BlogTitle = styled.h2`
-  ${({ theme }) => theme.typography.h3}
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
-  color: ${({ theme }) => theme.text};
+  margin-bottom: 0.75rem;
+  color: #183B4E;
+  font-size: 1.5rem;
+  font-weight: bold;
 `
 
 const BlogExcerpt = styled.p`
-  ${({ theme }) => theme.typography.body}
-  color: ${({ theme }) => theme.textSecondary};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  font-size: 1rem; // 16px explicitly set
+  color: #27548A;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   line-height: 1.6;
 `
 
@@ -148,15 +149,16 @@ const BlogMeta = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme }) => theme.textSecondary};
-  ${({ theme }) => theme.typography.small}
+  color: #183B4E;
+  font-size: 0.95rem;
 `
 
 const Tag = styled.span`
-  background: ${({ theme }) => theme.background};
-  padding: ${({ theme }) => `${theme.spacing.xs} ${theme.spacing.sm}`};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  color: ${({ theme }) => theme.primary};
+  background: #DDA85322;
+  padding: 0.25em 0.75em;
+  border-radius: 1em;
+  color: #27548A;
+  font-weight: 500;
 `
 
 const mockPosts = [
@@ -180,6 +182,24 @@ const mockPosts = [
   },
   {
     id: 3,
+    title: 'Building Core Features & Team Collaboration',
+    excerpt: 'Week 3 marks the start of real development: implementing authentication, collaborating with the team, and overcoming technical challenges...',
+    image: '/OJT/Week 3/image.png',
+    date: '2025-02-21',
+    tag: 'Week 3',
+    path: '/week3'
+  },
+  {
+    id: 4,
+    title: 'Advancing with Week 4: New Challenges',
+    excerpt: 'Continuing the journey into the fourth week, tackling more complex tasks and expanding my skillset...',
+    image: '/OJT/Week 4/image.png',
+    date: '2025-02-28',
+    tag: 'Week 4',
+    path: '/week4'
+  },
+  {
+    id: 5,
     title: 'Team Collaboration and Communication',
     excerpt: 'Exploring effective ways to work with the development team and improve communication skills...',
     image: 'https://a.pinatafarm.com/750x593/da377f0e4e/soyjak-pointing.jpg',
@@ -187,7 +207,7 @@ const mockPosts = [
     tag: 'Soft Skills'
   },
   {
-    id: 4,
+    id: 6,
     title: 'First Project Assignment',
     excerpt: 'Taking on my first real project and learning to handle responsibilities in a professional environment...',
     image: 'https://i.imgflip.com/4/1otk96.jpg',
@@ -195,7 +215,7 @@ const mockPosts = [
     tag: 'Projects'
   },
   {
-    id: 5,
+    id: 7,
     title: 'Problem Solving in Production',
     excerpt: 'Encountering and resolving real-world challenges in a production environment...',
     image: 'https://i.imgflip.com/4/1bhk.jpg',
@@ -203,7 +223,7 @@ const mockPosts = [
     tag: 'Technical'
   },
   {
-    id: 6,
+    id: 8,
     title: 'Growth and Learning Opportunities',
     excerpt: 'Reflecting on personal and professional growth during the internship journey...',
     image: 'https://imgflip.com/s/meme/This-Is-Fine.jpg',

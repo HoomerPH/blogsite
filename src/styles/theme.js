@@ -1,7 +1,7 @@
 export const lightTheme = {
   primary: '#2563eb',
   secondary: '#4f46e5',
-  background: 'linear-gradient(120deg, #ffffff 0%, #f0f4ff 100%)',
+  background: 'linear-gradient(135deg, #F5EEDC 60%, #DDA853 100%)',
   surface: '#f3f4f6',
   text: '#1f2937',
   textSecondary: '#4b5563',
@@ -9,21 +9,7 @@ export const lightTheme = {
   error: '#ef4444',
   success: '#22c55e',
   warning: '#f59e0b',
-  gradientOverlay: 'linear-gradient(160deg, rgba(37, 99, 235, 0.1) 0%, rgba(79, 70, 229, 0.05) 100%)'
-}
-
-export const darkTheme = {
-  primary: '#3b82f6',
-  secondary: '#6366f1',
-  background: 'linear-gradient(120deg, #111827 0%, #0a0f1a 100%)',
-  surface: '#1f2937',
-  text: '#f9fafb',
-  textSecondary: '#d1d5db',
-  border: '#374151',
-  error: '#f87171',
-  success: '#4ade80',
-  warning: '#fbbf24',
-  gradientOverlay: 'linear-gradient(160deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%)'
+  gradientOverlay: 'linear-gradient(160deg, rgba(39,84,138,0.08) 0%, rgba(221,168,83,0.04) 100%)'
 }
 
 export const commonStyles = {
