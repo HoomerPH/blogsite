@@ -200,37 +200,14 @@ const mockPosts = [
   },
   {
     id: 5,
-    title: 'Team Collaboration and Communication',
-    excerpt: 'Exploring effective ways to work with the development team and improve communication skills...',
-    image: 'https://a.pinatafarm.com/750x593/da377f0e4e/soyjak-pointing.jpg',
-    date: '2025-02-21',
-    tag: 'Soft Skills'
-  },
-  {
-    id: 6,
-    title: 'First Project Assignment',
-    excerpt: 'Taking on my first real project and learning to handle responsibilities in a professional environment...',
-    image: 'https://i.imgflip.com/4/1otk96.jpg',
-    date: '2025-02-28',
-    tag: 'Projects'
-  },
-  {
-    id: 7,
-    title: 'Problem Solving in Production',
-    excerpt: 'Encountering and resolving real-world challenges in a production environment...',
-    image: 'https://i.imgflip.com/4/1bhk.jpg',
+    title: 'Week 5: User Authentication & Patient Dashboard UI',
+    excerpt: 'Focused on building the login page and designing the patient dashboard, crucial elements for user interaction and data presentation...',
+    image: '/OJT/Week 5/image.png',
     date: '2025-03-07',
-    tag: 'Technical'
-  },
-  {
-    id: 8,
-    title: 'Growth and Learning Opportunities',
-    excerpt: 'Reflecting on personal and professional growth during the internship journey...',
-    image: 'https://imgflip.com/s/meme/This-Is-Fine.jpg',
-    date: '2025-03-14',
-    tag: 'Personal Growth'
+    tag: 'Week 5',
+    path: '/week5'
   }
-]
+];
 
 const Home = () => {
   const [posts] = useState(mockPosts)

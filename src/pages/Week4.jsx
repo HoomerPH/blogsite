@@ -419,7 +419,7 @@ const Week4 = () => {
 
       <NavigationButtonsContainer>
         <StyledNavButton to="/week3">← Go Back to Week 3</StyledNavButton>
-        <div>{/* Placeholder for "Proceed to Week 5" button */}</div>
+        <StyledNavButton to="/week5">Proceed to Week 5 →</StyledNavButton>
       </NavigationButtonsContainer>
 
       <ScrollToTop 
