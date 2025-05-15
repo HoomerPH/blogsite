@@ -355,7 +355,7 @@ const Week5 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 5/image.png" 
+                  src="/Week 5/image.png" 
                   alt="Login Page UI"
                 />
                 <Caption>BU HealthSync+ Login Page Interface</Caption>
@@ -364,7 +364,7 @@ const Week5 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 5/image copy.png" 
+                  src="/Week 5/image copy.png" 
                   alt="Patient Dashboard Mockup"
                 />
                 <Caption>Early Mockup of the Patient Dashboard</Caption>

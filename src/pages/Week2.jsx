@@ -419,7 +419,7 @@ const Week2 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 2/image.png" 
+                  src="/Week 2/image.png" 
                   alt="Environment Setup"
                 />
                 <Caption>Meet the Team </Caption>
@@ -429,7 +429,7 @@ const Week2 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 2/image copy.png" 
+                  src="/Week 2/image copy.png" 
                   alt="Code Implementation"
                 />
                 <Caption> Planned Use Cases of BU Health Sync+ (Part 2) </Caption>
@@ -439,7 +439,7 @@ const Week2 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 2/image copy 2.png" 
+                  src="/Week 2/image copy 2.png" 
                   alt="Team Discussion"
                 />
                 <Caption> Planned Use Cases of BU Health Sync+ (Part 1) </Caption>

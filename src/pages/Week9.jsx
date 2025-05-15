@@ -319,11 +319,11 @@ const Week9 = () => {
 
       <ImageGrid>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 9/image.png" alt="Fetch API vs Axios Comparison" />
+          <BlogImage src="/Week 9/image.png" alt="Fetch API vs Axios Comparison" />
           <Caption>Comparing Fetch API and Axios for React Native backend communication.</Caption>
         </ImageContainer>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 9/image copy.png" alt="Axios Interceptors Example" />
+          <BlogImage src="/Week 9/image copy.png" alt="Axios Interceptors Example" />
           <Caption>Conceptualizing Axios interceptors for request/response handling.</Caption>
         </ImageContainer>
       </ImageGrid>

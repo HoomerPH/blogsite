@@ -211,7 +211,7 @@ const Week3 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 3/image.png" 
+                  src="/Week 3/image.png" 
                   alt="Sprint Planning Session"
                 />
                 <Caption>Thinking about all the workloads I have to do.</Caption>
@@ -220,7 +220,7 @@ const Week3 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 3/image copy.png" 
+                  src="/Week 3/image copy.png" 
                   alt="Mobile App Authentication UI"
                 />
                 <Caption>Testing the Front End Screens for mobile.</Caption>
@@ -229,7 +229,7 @@ const Week3 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 3/image copy 2.png" 
+                  src="/Week 3/image copy 2.png" 
                   alt="Team Collaboration"
                 />
                 <Caption>Team Collaboration and Code Review</Caption>

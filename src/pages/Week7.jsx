@@ -322,11 +322,11 @@ const Week7 = () => {
 
       <ImageGrid>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 7/image.png" alt="Whiteboard with Authentication Flow Diagram" />
+          <BlogImage src="/Week 7/image.png" alt="Whiteboard with Authentication Flow Diagram" />
           <Caption> Us planning and sketching what is the next step of developing </Caption>
         </ImageContainer>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 7/image copy.png" alt="User Profile Wireframes" />
+          <BlogImage src="/Week 7/image copy.png" alt="User Profile Wireframes" />
         </ImageContainer>
       </ImageGrid>
 

@@ -319,11 +319,11 @@ const Week8 = () => {
 
       <ImageGrid>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 8/image.png" alt="React Native Authentication Flow Diagram" />
+          <BlogImage src="/Week 8/image.png" alt="React Native Authentication Flow Diagram" />
           <Caption>Team Meeting after Sir Gerald and Sir James assigned us what we will work on </Caption>
         </ImageContainer>
         <ImageContainer>
-          <BlogImage src="/OJT/Week 8/image copy.png" alt="API Endpoint Interaction with MySQL" />
+          <BlogImage src="/Week 8/image copy.png" alt="API Endpoint Interaction with MySQL" />
         </ImageContainer>
       </ImageGrid>
 

@@ -455,7 +455,7 @@ const Week1 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/public/Week 1/image.png" 
+                  src="/Week 1/image.png" 
                   alt="Week 1 Orientation"
                 />
                 <Caption>Orientation Session with the Development Team</Caption>
@@ -465,7 +465,7 @@ const Week1 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 1/image copy.png" 
+                  src="/Week 1/image copy.png" 
                   alt="Project Briefing"
                 />
                 <Caption>Project Briefing for BU HealthSync+</Caption>
@@ -475,7 +475,7 @@ const Week1 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 1/image copy 2.png" 
+                  src="/Week 1/image copy 2.png" 
                   alt="Team Introduction"
                 />
                 <Caption>Meeting with Team Members</Caption>
@@ -485,7 +485,7 @@ const Week1 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 1/image copy 3.png" 
+                  src="/Week 1/image copy 3.png" 
                   alt="First Day at Office"
                 />
                 <Caption>First Day at the Office</Caption>

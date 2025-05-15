@@ -325,19 +325,19 @@ return (
                 <ImageGrid>
                     <ImageContainer>
                         <figure>
-                            <BlogImage src="/OJT/Week 6/image.png" alt="Optimized Patient Dashboard UI" />
+                            <BlogImage src="/Week 6/image.png" alt="Optimized Patient Dashboard UI" />
                             <Caption>Optimized Patient Dashboard UI </Caption>
                         </figure>
                     </ImageContainer>
                     <ImageContainer>
                         <figure>
-                            <BlogImage src="/OJT/Week 6/image copy.png" alt="Team Meeting and Sprint Planning" />
+                            <BlogImage src="/Week 6/image copy.png" alt="Team Meeting and Sprint Planning" />
                             <Caption>Team Meeting and Sprint Planning </Caption>
                         </figure>
                     </ImageContainer>
                     <ImageContainer>
                         <figure>
-                            <BlogImage src="/OJT/Week 6/image copy 2.png" alt="Code Refactoring" />
+                            <BlogImage src="/Week 6/image copy 2.png" alt="Code Refactoring" />
                             <Caption>Code Refactoring for Performance</Caption>
                         </figure>
                     </ImageContainer>
