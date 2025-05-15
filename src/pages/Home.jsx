@@ -184,7 +184,7 @@ export const mockPosts = [
     id: 3,
     title: 'Building Core Features & Team Collaboration',
     excerpt: 'Week 3 marks the start of real development: implementing authentication, collaborating with the team, and overcoming technical challenges...',
-    image: '/OJT/Week 3/image.png',
+    image: '/Week 3/image.png',
     date: '2025-02-21',
     tag: 'Week 3',
     path: '/week3'
@@ -194,7 +194,7 @@ export const mockPosts = [
     title: 'Week 4: Database Schema and Mobile UI',
     date: 'February 24-28, 2025',
     excerpt: 'Designing the database schema and creating the initial mobile landing screen...',
-    image: '/OJT/Week 4/image.png',
+    image: '/Week 4/image.png',
     tag: 'Week 4',
     path: '/week4'
   },
@@ -203,7 +203,7 @@ export const mockPosts = [
     title: 'Week 5: Login and Patient Dashboard UI',
     date: 'February 31 - March 4, 2025', // Note: Corrected date from original summary if Feb 31 was a typo
     excerpt: 'Developing the login page and the initial UI for the patient dashboard...',
-    image: '/OJT/Week 5/image.png',
+    image: '/Week 5/image.png',
     tag: 'Week 5',
     path: '/week5'
   },
@@ -212,7 +212,7 @@ export const mockPosts = [
     title: 'Week 6: Iteration and Optimization',
     date: 'March 3-7, 2025',
     excerpt: 'Team collaboration, sprint planning, and optimizing the Patient Dashboard...',
-    image: '/OJT/Week 6/image.png',
+    image: '/Week 6/image.png',
     tag: 'Week 6',
     path: '/week6'
   },
@@ -221,7 +221,7 @@ export const mockPosts = [
     title: 'Week 7: Feature Implementation and API Integration',
     date: 'March 10-14, 2025',
     excerpt: 'Implementing user profile management and integrating with backend APIs for real-time patient data...',
-    image: '/OJT/Week 7/image.png',
+    image: '/Week 7/image.png',
     tag: 'Week 7',
     path: '/week7'
   },
@@ -230,7 +230,7 @@ export const mockPosts = [
     title: 'Week 8: Diving into React Native - Authentication & API Endpoints',
     date: 'March 17-21, 2025',
     excerpt: 'Self-paced learning on React Native authentication flows and connecting to MySQL backends via API endpoints...',
-    image: '/OJT/Week 8/image.png',
+    image: '/Week 8/image.png',
     tag: 'Week 8',
     path: '/week8'
   },
@@ -239,7 +239,7 @@ export const mockPosts = [
     title: 'Week 9: Mastering API Communication - Fetch vs. Axios',
     date: 'March 24-28, 2025',
     excerpt: 'Deep dive into Fetch API and Axios for making HTTP requests in React Native, comparing their features and use cases...',
-    image: '/OJT/Week 9/image.png',
+    image: '/Week 9/image.png',
     tag: 'Week 9',
     path: '/week9'
   }

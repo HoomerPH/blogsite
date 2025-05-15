@@ -455,7 +455,7 @@ const Week1 = () => {
             <ImageContainer>
               <figure>
                 <BlogImage 
-                  src="/OJT/Week 1/image.png" 
+                  src="/public/Week 1/image.png" 
                   alt="Week 1 Orientation"
                 />
                 <Caption>Orientation Session with the Development Team</Caption>
