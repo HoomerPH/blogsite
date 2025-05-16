@@ -184,7 +184,7 @@ export const mockPosts = [
     id: 3,
     title: 'Building Core Features & Team Collaboration',
     excerpt: 'Week 3 marks the start of real development: implementing authentication, collaborating with the team, and overcoming technical challenges...',
-    image: '/public/Week 3/image.png',
+    image: '/cinema.png',
     date: '2025-02-21',
     tag: 'Week 3',
     path: '/week3'
