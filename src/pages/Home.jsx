@@ -184,7 +184,7 @@ export const mockPosts = [
     id: 3,
     title: 'Building Core Features & Team Collaboration',
     excerpt: 'Week 3 marks the start of real development: implementing authentication, collaborating with the team, and overcoming technical challenges...',
-    image: '/Week 3/image.png',
+    image: '/public/Week 3/image.png',
     date: '2025-02-21',
     tag: 'Week 3',
     path: '/week3'
@@ -242,6 +242,15 @@ export const mockPosts = [
     image: '/Week 9/image.png',
     tag: 'Week 9',
     path: '/week9'
+  },
+  {
+    id: 10,
+    title: 'Week 10: Practical API Calls - Axios in Action',
+    date: 'May 03 - May 09, 2025',
+    excerpt: 'This week, we put theory into practice by implementing API calls using Axios. We explored a practical example of fetching data, highlighting Axios\'s ease of use, automatic JSON parsing, and robust error handling. A hands-on dive into a crucial skill for modern app development.',
+    image: '/Week 10/image.png', // Assuming OJT folder is not at the root of public
+    path: '/week10',
+    tag: 'API Integration'
   }
 ];
 

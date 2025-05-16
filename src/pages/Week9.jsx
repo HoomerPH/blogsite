@@ -320,11 +320,9 @@ const Week9 = () => {
       <ImageGrid>
         <ImageContainer>
           <BlogImage src="/Week 9/image.png" alt="Fetch API vs Axios Comparison" />
-          <Caption>Comparing Fetch API and Axios for React Native backend communication.</Caption>
         </ImageContainer>
         <ImageContainer>
           <BlogImage src="/Week 9/image copy.png" alt="Axios Interceptors Example" />
-          <Caption>Conceptualizing Axios interceptors for request/response handling.</Caption>
         </ImageContainer>
       </ImageGrid>
 
@@ -377,10 +375,10 @@ const Week9 = () => {
 
       <NavigationButtonsContainer>
         <StyledNavButton to="/week8">
-          &larr; Go Back to Week 8
+          &larr; Previous Week
         </StyledNavButton>
         <StyledNavButton to="/week10">
-          Proceed to Week 10 &rarr;
+          Next Week &rarr;
         </StyledNavButton>
       </NavigationButtonsContainer>
 
