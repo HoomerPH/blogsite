@@ -12,6 +12,7 @@ import Week7 from './pages/Week7'
 import Week8 from './pages/Week8'
 import Week9 from './pages/Week9'
 import Week10 from './pages/Week10'
+import Week11 from './pages/Week11'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/week1" element={<Week1 />} />
+            <Route path="/week1" element={<Week1 />} /> 
             <Route path="/week2" element={<Week2 />} />
             <Route path="/week3" element={<Week3 />} />
             <Route path="/week4" element={<Week4 />} />
@@ -30,6 +31,7 @@ function App() {
             <Route path="/week8" element={<Week8 />} />
             <Route path="/week9" element={<Week9 />} />
             <Route path="/week10" element={<Week10 />} />
+            <Route path="/week11" element={<Week11 />} />
           </Routes>
         </Layout>
       </ThemeProvider>

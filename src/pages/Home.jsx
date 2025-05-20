@@ -251,6 +251,15 @@ export const mockPosts = [
     image: '/Week 10/image.png', // Assuming OJT folder is not at the root of public
     path: '/week10',
     tag: 'API Integration'
+  },
+  {
+    id: 11,
+    title: "Week 11: Final Presentation and Completion",
+    date: "May 10 - May 17, 2025",
+    excerpt: "In my final week, I prepared and delivered my OJT presentation to Sir Michael, showcasing all my contributions to the BU HealthSync+ project. The successful presentation led to the signing of my completion form, marking the end of a transformative 11-week journey filled with growth, challenges, and valuable experiences.",
+    image: "/Week 11/image.png",
+    path: "/week11",
+    tag: "Completion"
   }
 ];
 
